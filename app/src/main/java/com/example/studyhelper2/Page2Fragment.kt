@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_2.*
 
 
 class Page2Fragment : Fragment(){
@@ -13,7 +12,7 @@ class Page2Fragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_2, container, false)
+        val root = inflater.inflate(R.layout.fragment_timet_p_stopw, container, false)
         return root
     }
     // 뷰 생성이 완료되면 호출되는 메소드
