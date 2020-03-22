@@ -15,6 +15,7 @@ class Page1Fragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_1, container, false)
         return root
+
     }
     // 뷰 생성이 완료되면 호출되는 메소드
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
