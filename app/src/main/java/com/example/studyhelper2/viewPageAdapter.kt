@@ -8,7 +8,7 @@ class viewPageAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm){
     private val items = ArrayList<Fragment>()
     init{
         items.add(Page1Fragment.newInstance(1))
-        items.add(Page2Fragment.newInstance(2))
+        items.add(StopWatch.newInstance(2))
         items.add(Page3Fragment.newInstance(3))
 
     }
