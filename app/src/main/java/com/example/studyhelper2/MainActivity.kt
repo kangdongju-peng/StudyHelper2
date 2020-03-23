@@ -11,12 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val Adapter = viewPageAdapter(supportFragmentManager)
         view_pager.adapter = Adapter
-        view_pager.currentItem=0
-        // 탭 레아아웃에 뷰페이저 연결
-        tabs.setupWithViewPager(view_pager)
-        // 탭뷰 각각 이름 만들기
-        val feel=arrayOf("TodoList","Timetable","Downtime")
-        for(i in 0..2)
-            tabs.getTabAt(i)?.setText(feel[i])
+        view_pager.currentItem=1
     }
 }
