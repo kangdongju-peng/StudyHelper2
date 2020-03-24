@@ -1,16 +1,17 @@
 package com.example.studyhelper2
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_edit.*
+import kotlinx.android.synthetic.main.activity_edit.view.*
 import kotlinx.android.synthetic.main.fragment_1.*
 import kotlinx.android.synthetic.main.fragment_1.view.*
+import kotlinx.android.synthetic.main.fragment_1.view.button_add
 
 
 class Page1Fragment : Fragment() {
@@ -18,16 +19,26 @@ class Page1Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater!!.inflate(R.layout.fragment_1, container, false)
-        val intent = Intent(context, EditActivity::class.java)
-        //val name = intent.getStringExtra("name").toString()
-        root.button_add.setOnClickListener {
-            Log.d("**","ho")
-            val intent = Intent(context, EditActivity::class.java)
-            startActivity(intent)
+        val root = inflater.inflate(R.layout.fragment_1, container, false)
 
+        val name = getArguments()!!.getString("name")
+
+        var todoList = arrayListOf<Todo>()
+
+        val todoAdapter = MainListAdapter(this,todoList)
+
+
+
+        root.button_add.setOnClickListener {
+            val intent = Intent(context,EditActivity::class.java)
+            startActivity(intent)
         }
-        //root.textView.text = name.toString()
+        Log.d("***","plzs")
+
+
+
+
+
         return root
 
 
