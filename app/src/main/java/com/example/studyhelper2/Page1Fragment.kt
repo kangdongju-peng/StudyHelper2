@@ -27,6 +27,8 @@ class Page1Fragment : Fragment() {
 
         val todoAdapter = MainListAdapter(context!!,todoList)
 
+        root.listView.adapter = todoAdapter
+
 
 
         root.button_add.setOnClickListener {
