@@ -6,24 +6,25 @@
     android:layout_height="match_parent"
     android:background="#171717"
     tools:context=".MainActivity">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicator="@color/colorPrimary"
+            app:tabTextColor="@color/colorPrimary"
+            app:tabIndicatorGravity="bottom" app:tabIndicatorHeight="1dp"/>
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/view_pager"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        </androidx.viewpager.widget.ViewPager>
 
-        <me.relex.circleindicator.CircleIndicator
-            android:id="@+id/indicator"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            app:ci_drawable="@drawable/rectangle_indicator"
-            app:ci_height="7dp"
-            app:ci_margin="4dp"
-            app:ci_width="7dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:ignore="MissingConstraints" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
