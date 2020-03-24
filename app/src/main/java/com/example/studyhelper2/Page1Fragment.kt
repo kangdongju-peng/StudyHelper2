@@ -25,7 +25,7 @@ class Page1Fragment : Fragment() {
 
         var todoList = arrayListOf<Todo>()
 
-        val todoAdapter = MainListAdapter(this,todoList)
+        val todoAdapter = MainListAdapter(context!!,todoList)
 
 
 
