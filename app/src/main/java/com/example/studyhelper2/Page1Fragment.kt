@@ -23,22 +23,6 @@ class Page1Fragment : Fragment() {
 
         val name = getArguments()!!.getString("name")
 
-        var todoList = arrayListOf<Todo>()
-
-        val todoAdapter = MainListAdapter(context!!,todoList)
-
-        root.listView.adapter = todoAdapter
-
-
-
-        root.button_add.setOnClickListener {
-            val intent = Intent(context,EditActivity::class.java)
-            startActivity(intent)
-        }
-        Log.d("***","plzs")
-
-
-
 
 
         return root
@@ -48,7 +32,14 @@ class Page1Fragment : Fragment() {
     // 뷰 생성이 완료되면 호출되는 메소드
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        var todoList = arrayListOf<Todo>()
+        val todoAdapter = MainListAdapter(context!!,todoList)
+        listView.adapter = todoAdapter
+        button_add.setOnClickListener {
+            val intent = Intent(context,EditActivity::class.java)
+            startActivity(intent)
+        }
+        Log.d("***","plzs")
     }
     companion object {
         private const val num = "num"
