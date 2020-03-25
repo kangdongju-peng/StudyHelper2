@@ -1,14 +1,18 @@
 package com.example.studyhelper2
 
 import android.annotation.SuppressLint
+import android.app.ActionBar
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_timet_p_stopw.*
+import org.w3c.dom.Text
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.concurrent.timer
 
 
@@ -16,6 +20,9 @@ class StopWatch : Fragment(){
     private var timerTask : Timer? = null
     private var time :Int = 0
     private var mHandler :Handler = Handler()
+    private var scrollView : ScrollView? = null
+    private var arrayTime :ArrayList<TextView>? = null
+    private var matchToParant :Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +44,9 @@ class StopWatch : Fragment(){
                 pauseStopwatch()
             }
         }
+        scrollView = getView()!!.findViewById(R.id.timetable_scv) as ScrollView
+        matchToParant = scrollView!!.getWidth()
+
     }
     companion object {
         private const val num = "num"
@@ -72,5 +82,25 @@ class StopWatch : Fragment(){
         timer_start_button.setBackgroundResource(R.drawable.start_button)
         timerTask?.cancel()
         timerTask =null
+    }
+    @SuppressLint("ResourceAsColor")
+    private fun setTimeTableUI(){
+        val tableRowParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0)
+        tableRowParams.weight = 1f
+        val timeParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT)
+        timeParams.weight = 1.5f
+        for(i in 0 until 24){
+            var tableLayout = getView()!!.findViewById<TableLayout>(R.id.table_layout)
+            arrayTime = ArrayList<TextView>()
+            var tableRow = TableRow(context)
+            tableRow.layoutParams = tableRowParams
+            tableRow.weightSum = 13.5f
+            var tv = TextView(context)
+            tv.layoutParams = timeParams
+
+
+
+
+        }
     }
 }
