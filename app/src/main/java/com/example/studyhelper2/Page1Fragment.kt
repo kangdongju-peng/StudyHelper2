@@ -36,10 +36,13 @@ class Page1Fragment : Fragment() {
         val todoAdapter = MainListAdapter(context!!,todoList)
         listView.adapter = todoAdapter
         button_add.setOnClickListener {
-            val intent = Intent(context,EditActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(context,EditActivity::class.java))
         }
-        Log.d("***","plzs")
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
     }
     companion object {
         private const val num = "num"
