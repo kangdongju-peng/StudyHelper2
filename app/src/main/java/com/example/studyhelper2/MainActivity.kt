@@ -1,5 +1,6 @@
 package com.example.studyhelper2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         //Realm
         Realm.init(applicationContext)
         realm = Realm.getDefaultInstance()
+        settingbtn.setOnClickListener{
+            val intent : Intent = Intent(this,SettingActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
